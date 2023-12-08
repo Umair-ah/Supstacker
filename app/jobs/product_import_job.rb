@@ -32,7 +32,7 @@ class ProductImportJob < ApplicationJob
 
     Turbo::StreamsChannel.broadcast_replace_to(
       stack,
-      target: "products_count_#{stack.id}",
+      target: "products_count#{stack.id}",
       partial: "stacks/stack_product_count",
       locals: { stack: stack }
     ) 
