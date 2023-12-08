@@ -18,6 +18,9 @@
     <h1 class="h3 flex-1"><%= @stack.title %></h1>
     <div class="flex items-center justify-between gap-4 py-3 px-2 border-b border-t mt-3">
       <div class="flex flex-1 items-center gap-4">
+        <button href="#" class="btn btn-white rounded-full flex items-center justify-center w-10 h10 m-0" data-controller="clipboard" data-clipboard-text="<%= stack_url(@stack.share_link) %>">
+          <%= icon "link", classes:"w-5 h-5 flex-shrink-0" %>
+        </button>
         <time class="text-slate-600 text-xs" datetime="<%= @stack.created_at.to_fs(:long) %>">Created <%= time_ago_in_words(@stack.created_at) + ' ago' %></time>
       </div>
       <% if current_user_stack?(@stack) %>
